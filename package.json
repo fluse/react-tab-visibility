@@ -1,7 +1,7 @@
 {
   "name": "react-tab-visbility",
   "version": "15.0.1",
-  "description": "listen on tab visibilitychange",
+  "description": "listen on tab visibilitychange and get inactive time",
   "main": "dist/tabVisibility.js",
   "repository": {
     "type": "git",
@@ -14,7 +14,8 @@
     "listener",
     "react-component",
     "visbility change",
-    "tab visbile"
+    "tab visibile",
+    "tab inactive time"
   ],
   "author": "Holger Schauf",
   "website": "http://www.holger-schauf.de",
