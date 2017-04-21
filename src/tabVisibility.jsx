@@ -1,6 +1,7 @@
 'use strict';
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class TabVisibility extends Component {
 
@@ -75,4 +76,4 @@ class TabVisibility extends Component {
     }
 }
 
-module.exports = TabVisibility;
+export default TabVisibility;
