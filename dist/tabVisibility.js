@@ -1,5 +1,9 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
@@ -20,7 +24,7 @@ var TabVisibility = function (_Component) {
     function TabVisibility(props) {
         _classCallCheck(this, TabVisibility);
 
-        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(TabVisibility).call(this, props));
+        var _this = _possibleConstructorReturn(this, (TabVisibility.__proto__ || Object.getPrototypeOf(TabVisibility)).call(this, props));
 
         _this.state = {
             tabIsVisible: true,
@@ -35,6 +39,7 @@ var TabVisibility = function (_Component) {
     _createClass(TabVisibility, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
+
             var keys = {
                 hidden: "visibilitychange",
                 webkitHidden: "webkitvisibilitychange",
@@ -74,8 +79,10 @@ var TabVisibility = function (_Component) {
                 hiddenTime: this.state.hiddenTime
             });
 
-            if (tabIsVisible && this.cycle !== null) {
+            if (tabIsVisible && !!this.cycle) {
+
                 clearInterval(this.cycle);
+
                 this.setState({
                     hiddenTime: 0
                 });
@@ -101,4 +108,4 @@ var TabVisibility = function (_Component) {
     return TabVisibility;
 }(_react.Component);
 
-module.exports = TabVisibility;
+exports.default = TabVisibility;
