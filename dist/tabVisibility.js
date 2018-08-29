@@ -59,7 +59,7 @@ var TabVisibility = function (_Component) {
     }, {
         key: 'componentWillUnmount',
         value: function componentWillUnmount() {
-            document.removeEventListener(this.eventName);
+            document.removeEventListener(this.eventName, this.handleTabVisibility.bind(this));
         }
     }, {
         key: 'handleTabVisibility',

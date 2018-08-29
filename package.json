@@ -1,6 +1,6 @@
 {
   "name": "react-tab-visibility",
-  "version": "16.3.0",
+  "version": "16.3.1",
   "description": "listen on tab visibilitychange and get inactive time",
   "main": "dist/tabVisibility.js",
   "repository": {

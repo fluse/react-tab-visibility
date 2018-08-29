@@ -36,7 +36,7 @@ export default class TabVisibility extends Component {
     }
 
     componentWillUnmount() {
-        document.removeEventListener(this.eventName)
+        document.removeEventListener(this.eventName, this.handleTabVisibility.bind(this))
     }
 
     handleTabVisibility(e) {
