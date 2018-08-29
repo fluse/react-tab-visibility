@@ -1,6 +1,6 @@
 {
   "name": "react-tab-visibility",
-  "version": "15.5.4",
+  "version": "16.3.0",
   "description": "listen on tab visibilitychange and get inactive time",
   "main": "dist/tabVisibility.js",
   "repository": {
@@ -34,8 +34,7 @@
     "babel-preset-react": "^6.5.0"
   },
   "peerDependencies": {
-      "react": "^0.14.0 || ^15.0.1",
-      "prop-types": "^15.5.8",
-      "react-dom": "^0.14.0 || ^15.0.1"
+    "react": "^0.14.0 || ^15.5.0 || ^15.5.0 || ^16.x.x",
+    "react-dom": "^0.14.0 || ^15.5.0 || ^16.x.x"
   }
 }

@@ -10,10 +10,6 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _propTypes = require('prop-types');
-
-var _propTypes2 = _interopRequireDefault(_propTypes);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -31,8 +27,7 @@ var TabVisibility = function (_Component) {
         var _this = _possibleConstructorReturn(this, (TabVisibility.__proto__ || Object.getPrototypeOf(TabVisibility)).call(this, props));
 
         _this.state = {
-            tabIsVisible: true,
-            hiddenTime: 0
+            tabIsVisible: true
         };
 
         _this.eventName = null;
@@ -43,6 +38,7 @@ var TabVisibility = function (_Component) {
     _createClass(TabVisibility, [{
         key: 'componentDidMount',
         value: function componentDidMount() {
+
             var keys = {
                 hidden: "visibilitychange",
                 webkitHidden: "webkitvisibilitychange",
@@ -71,30 +67,9 @@ var TabVisibility = function (_Component) {
 
             var tabIsVisible = !e.target[this.eventKey];
 
-            if (!tabIsVisible) {
-                this.cycle = setInterval(this.countHiddenTime.bind(this), 1000);
-            }
-
             this.setState({ tabIsVisible: tabIsVisible });
 
-            this.onTabVisibilityChange({
-                tabIsVisible: tabIsVisible,
-                hiddenTime: this.state.hiddenTime
-            });
-
-            if (tabIsVisible && this.cycle !== null) {
-                clearInterval(this.cycle);
-                this.setState({
-                    hiddenTime: 0
-                });
-            }
-        }
-    }, {
-        key: 'countHiddenTime',
-        value: function countHiddenTime() {
-            var hiddenTime = this.state.hiddenTime;
-            hiddenTime++;
-            this.setState({ hiddenTime: hiddenTime });
+            this.onTabVisibilityChange({ tabIsVisible: tabIsVisible });
         }
     }, {
         key: 'onTabVisibilityChange',
