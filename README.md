@@ -1,10 +1,12 @@
 # react-tab-visbility
 
-if you need information about tab is active or not and how long is it inactive,
+use react-tab-visibility, if you need tab active or inactive informations.
+
+You get a bool for visibility state and number for hidden duration
 
 ## example
 
-build with react 15.x
+supports react 15.x and 16.x
 
 [![npm package](https://nodei.co/npm/react-tab-visibility.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/react-tab-visibility/)
 [![NPM](https://nodei.co/npm-dl/react-tab-visibility.png?months=6&height=3)](https://www.npmjs.com/package/react-tab-visibility)
@@ -21,7 +23,12 @@ build with react 15.x
 import TabVisibility from 'react-tab-visibility';
 
 class YourComponent extends TabVisibility {
-
+    onTabVisibilityChange(status) {
+        status = {
+            isTabVisible: Boolean,
+            hiddenTime: Number // seconds
+        }
+    }
 }
 ```
 
@@ -30,7 +37,7 @@ class YourComponent extends TabVisibility {
 create in your parent class a new method to get change information
 
 ```js
-handleTabVisibility(status) {
+onTabVisibilityChange(status) {
     status = {
         isTabVisible: Boolean,
         hiddenTime: Number // seconds
