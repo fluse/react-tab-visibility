@@ -29,7 +29,7 @@
     "homepage": "https://github.com/fluse/react-tab-visibility",
     "scripts": {
         "start": "webpack-dev-server --open --mode development",
-        "page": "webpack --mode production --output-path page",
+        "page": "webpack --mode production --output-path ./",
         "build": "babel src/tabVisibility.jsx --out-dir dist"
     },
     "devDependencies": {
