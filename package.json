@@ -17,6 +17,7 @@
         "react-component",
         "visbility change",
         "tab visibile",
+        "visibility listener",
         "tab inactive time"
     ],
     "publishConfig": { 

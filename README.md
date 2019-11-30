@@ -10,7 +10,7 @@ Get time of inactivity after reactivation
 ## Install
 
 ```
-> npm install react-tab-visibility --save
+npm install react-tab-visibility --save
 ```
 
 ## How to use
