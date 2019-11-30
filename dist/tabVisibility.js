@@ -41,8 +41,10 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(TabVisibility).call(this, props));
     _this.state = {
-      tabIsVisible: true
+      tabIsVisible: true,
+      hiddenTime: 0
     };
+    _this.cycle = null;
     _this.eventName = null;
     _this.eventKey = null;
     return _this;
@@ -77,11 +79,32 @@ function (_Component) {
     key: "handleTabVisibility",
     value: function handleTabVisibility(e) {
       var tabIsVisible = !e.target[this.eventKey];
+      var hiddenTime = this.state.hiddenTime;
+
+      if (!tabIsVisible) {
+        hiddenTime = 0;
+        this.cycle = setInterval(this.countHiddenTime.bind(this), 1000);
+      }
+
+      if (tabIsVisible && !!this.cycle) {
+        clearInterval(this.cycle);
+      }
+
       this.setState({
-        tabIsVisible: tabIsVisible
+        tabIsVisible: tabIsVisible,
+        hiddenTime: hiddenTime
       });
       this.onTabVisibilityChange({
-        tabIsVisible: tabIsVisible
+        tabIsVisible: tabIsVisible,
+        hiddenTime: hiddenTime
+      });
+    }
+  }, {
+    key: "countHiddenTime",
+    value: function countHiddenTime() {
+      var hiddenTime = this.state.hiddenTime + 1;
+      this.setState({
+        hiddenTime: hiddenTime
       });
     }
   }, {

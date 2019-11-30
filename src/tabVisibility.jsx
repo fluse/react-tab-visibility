@@ -6,9 +6,11 @@ export default class TabVisibility extends Component {
         super(props)
 
         this.state = {
-            tabIsVisible: true
+            tabIsVisible: true,
+            hiddenTime: 0
         }
-
+        
+        this.cycle = null
         this.eventName = null
         this.eventKey = null
     }
@@ -40,10 +42,25 @@ export default class TabVisibility extends Component {
     handleTabVisibility(e) {
 
         const tabIsVisible = !e.target[this.eventKey]
+        let hiddenTime = this.state.hiddenTime
 
-        this.setState({ tabIsVisible })
+        if (!tabIsVisible) {
+            hiddenTime = 0
+            this.cycle = setInterval(this.countHiddenTime.bind(this), 1000)
+          }
 
-        this.onTabVisibilityChange({ tabIsVisible })
+        if (tabIsVisible && !!this.cycle) {
+            clearInterval(this.cycle)
+        }
+
+        this.setState({ tabIsVisible, hiddenTime })
+
+        this.onTabVisibilityChange({ tabIsVisible, hiddenTime })
+    }
+    
+    countHiddenTime() {
+        let hiddenTime = this.state.hiddenTime + 1
+        this.setState({ hiddenTime })
     }
 
     onTabVisibilityChange(status) {}
