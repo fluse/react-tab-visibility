@@ -8,9 +8,6 @@ You get a bool for visibility state and number for hidden duration
 
 supports react 15.x and 16.x
 
-[![npm package](https://nodei.co/npm/react-tab-visibility.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/react-tab-visibility/)
-[![NPM](https://nodei.co/npm-dl/react-tab-visibility.png?months=6&height=3)](https://www.npmjs.com/package/react-tab-visibility)
-
 ## install
 
 ```
@@ -61,13 +58,19 @@ if you want to add or optimize this component, feel free <3
 clone this repository and run install
 
 ```
-npm install
+npm install --save
 ```
 
-and after changes compile es6 to es5
+start dev server
 
 ```
-npm run compile
+npm start
+```
+
+make your changes and build new es5 friendly version
+
+```
+npm run build
 ```
 
 ## Give me a coffee

@@ -1,6 +1,4 @@
-'use strict';
-
-import React, { Component } from 'react';
+import React, { useEffect, Component } from 'react'
 
 export default class TabVisibility extends Component {
 
@@ -29,7 +27,7 @@ export default class TabVisibility extends Component {
             if (stateKey in document) {
                 this.eventKey = stateKey
                 this.eventName = keys[stateKey]
-                break;
+                break
             }
         }
 
