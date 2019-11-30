@@ -8,15 +8,13 @@
         "url": "https://github.com/fluse/react-tab-visibility.git"
     },
     "keywords": [
-        "React 15",
-        "React 16",
-        "tab",
-        "reactjs",
         "react",
+        "react-component",
+        "reactjs",
+        "tab",
         "browser tab",
         "visibility",
         "listener",
-        "react-component",
         "component",
         "visbility change",
         "tab visibile",
