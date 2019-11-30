@@ -41,8 +41,7 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(TabVisibility).call(this, props));
     _this.state = {
-      tabIsVisible: true,
-      hiddenTime: 0
+      tabIsVisible: true
     };
     _this.eventName = null;
     _this.eventKey = null;
@@ -72,39 +71,17 @@ function (_Component) {
   }, {
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
-      document.removeEventListener(this.eventName);
+      document.removeEventListener(this.eventName, this.handleTabVisibility.bind(this));
     }
   }, {
     key: "handleTabVisibility",
     value: function handleTabVisibility(e) {
       var tabIsVisible = !e.target[this.eventKey];
-
-      if (!tabIsVisible) {
-        this.cycle = setInterval(this.countHiddenTime.bind(this), 1000);
-      }
-
       this.setState({
         tabIsVisible: tabIsVisible
       });
       this.onTabVisibilityChange({
-        tabIsVisible: tabIsVisible,
-        hiddenTime: this.state.hiddenTime
-      });
-
-      if (tabIsVisible && !!this.cycle) {
-        clearInterval(this.cycle);
-        this.setState({
-          hiddenTime: 0
-        });
-      }
-    }
-  }, {
-    key: "countHiddenTime",
-    value: function countHiddenTime() {
-      var hiddenTime = this.state.hiddenTime;
-      hiddenTime++;
-      this.setState({
-        hiddenTime: hiddenTime
+        tabIsVisible: tabIsVisible
       });
     }
   }, {

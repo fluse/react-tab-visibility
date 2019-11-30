@@ -1,4 +1,4 @@
-import React, { useEffect, Component } from 'react'
+import React, { Component } from 'react'
 
 export default class TabVisibility extends Component {
 
@@ -6,8 +6,7 @@ export default class TabVisibility extends Component {
         super(props)
 
         this.state = {
-            tabIsVisible: true,
-            hiddenTime: 0
+            tabIsVisible: true
         }
 
         this.eventName = null
@@ -35,38 +34,16 @@ export default class TabVisibility extends Component {
     }
 
     componentWillUnmount() {
-        document.removeEventListener(this.eventName)
+        document.removeEventListener(this.eventName, this.handleTabVisibility.bind(this))
     }
 
     handleTabVisibility(e) {
 
         const tabIsVisible = !e.target[this.eventKey]
 
-        if (!tabIsVisible) {
-            this.cycle = setInterval(this.countHiddenTime.bind(this), 1000)
-        }
-
         this.setState({ tabIsVisible })
 
-        this.onTabVisibilityChange({
-            tabIsVisible,
-            hiddenTime: this.state.hiddenTime
-        })
-
-        if (tabIsVisible && !!this.cycle) {
-
-            clearInterval(this.cycle)
-
-            this.setState({
-                hiddenTime: 0
-            })
-        }
-    }
-
-    countHiddenTime() {
-        let hiddenTime = this.state.hiddenTime
-        hiddenTime++
-        this.setState({ hiddenTime })
+        this.onTabVisibilityChange({ tabIsVisible })
     }
 
     onTabVisibilityChange(status) {}
