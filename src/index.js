@@ -18,7 +18,8 @@ class App extends TabVisibility {
 
                 <p>Last inactivity duration in seconds: {this.state.hiddenTime}</p>
                 
-                <a href="https://github.com/fluse/react-tab-visibility" target="_blank">Checkout Documentation</a>
+                <a href="https://github.com/fluse/react-tab-visibility" class="docu" target="_blank">Checkout Documentation</a>
+                <a href="https://www.npmjs.com/package/react-tab-visibility" class="npm" target="_blank">NPM Package</a>
             </section>
         )
     }

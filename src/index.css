@@ -22,6 +22,14 @@ a {
     color: #fff;
     padding: 15px;
     border-radius: 5px;
+    margin: 0 10px;
     text-decoration: none;
+}
+
+.docu {
     background-color: #398be0;
+}
+
+.npm {
+    background-color: #e03939;
 }
