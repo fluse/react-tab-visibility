@@ -20,9 +20,6 @@
         "visibility listener",
         "tab inactive time"
     ],
-    "publishConfig": { 
-        "registry": "https://npm.pkg.github.com/" 
-    },
     "author": "Holger D. Schauf",
     "website": "https://github.com/fluse/",
     "license": "MIT",
