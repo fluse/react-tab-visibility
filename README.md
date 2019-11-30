@@ -1,64 +1,44 @@
 # react-tab-visbility
 
-use react-tab-visibility, if you need tab active or inactive informations.
-
-You get a bool for visibility state and number for hidden duration
-
-## example
-
 supports react 15.x and 16.x
 
-## install
+use react-tab-visibility for browser tab activity informations.
+
+Get informed on tab change
+Get time of inactivity after reactivation
+
+## Install
 
 ```
 > npm install react-tab-visibility --save
 ```
 
-## how to use
+## How to use
 
 ```jsx
-import TabVisibility from 'react-tab-visibility';
+
+import TabVisibility from 'react-tab-visibility'
 
 class YourComponent extends TabVisibility {
-    onTabVisibilityChange(status) {
-        status = {
-            isTabVisible: Boolean,
-            hiddenTime: Number // seconds
-        }
+    
+    onTabVisibilityChange({ isTabVisible, hiddenTime }) {
+        
+        this.setState({ isTabVisible })
+        
+        console.log(isTabVisible, hiddenTime)
     }
 }
+
 ```
 
-### Get information about active or inactive tab
-
-create in your parent class a new method to get change information
-
-```js
-onTabVisibilityChange(status) {
-    status = {
-        isTabVisible: Boolean,
-        hiddenTime: Number // seconds
-    }
-}
-```
-
-or check for following state variables
-
-```js
-this.state = {
-    tabIsVisible: true,
-    hiddenTime: 0
-};
-```
-
-### Development
+## Development
 
 if you want to add or optimize this component, feel free <3
 
 clone this repository and run install
 
 ```
-npm install --save
+npm install
 ```
 
 start dev server
