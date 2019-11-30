@@ -7,6 +7,8 @@ use react-tab-visibility for browser tab activity informations.
 Get informed on tab change
 Get time of inactivity after reactivation
 
+**[Watch Demo](https://fluse.github.io/react-tab-visibility/)**
+
 ## Install
 
 ```
