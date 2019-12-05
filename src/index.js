@@ -20,6 +20,13 @@ class App extends TabVisibility {
                 
                 <a href="https://github.com/fluse/react-tab-visibility" class="docu" target="_blank">Checkout Documentation</a>
                 <a href="https://www.npmjs.com/package/react-tab-visibility" class="npm" target="_blank">NPM Package</a>
+
+                <br />
+                <br />
+
+                <h2>Take a look at other Packages</h2>
+
+                <a href="https://www.npmjs.com/package/react-scroll-bound" className="npm" target="_blank">react-scroll-bound</a>
             </section>
         )
     }

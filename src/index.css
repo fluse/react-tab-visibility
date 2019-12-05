@@ -13,6 +13,11 @@ h1 {
     padding: 10vh 0 0;
 }
 
+h2 {
+    font-size: 30px;
+    padding: 0 0 2vh;
+}
+
 p {
     text-align: center;
     padding-bottom: 30px;
